@@ -4,7 +4,7 @@ from PIL import Image
 import numpy as np
 
 # Cargar el modelo entrenado
-model = load_model('https://drive.google.com/file/d/16273W1jBbugxKQ8feL1-QCQblxRSWwMm/view?usp=sharing')
+model = load_model('model/mimodelo.h5')
 
 # Crear la interfaz de usuario
 st.title("Clasificación de Lenguaje de Señas")
