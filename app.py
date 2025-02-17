@@ -17,7 +17,7 @@ if uploaded_file is not None:
     image = Image.open(uploaded_file).convert('L')  # Convertir a escala de grises
     image = image.resize((100, 100))
     img_array = np.array(image) / 255.0  # Normalizar
-    img_array = img_array.reshape(1, 100, 100, 1)
+    img_array = img_array.reshape(1, 100, 100, 3)
 
     # Mostrar la imagen subida
     st.image(image, caption='Imagen subida', use_column_width=True)
