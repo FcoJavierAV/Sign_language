@@ -16,13 +16,12 @@ if uploaded_file is not None:
     # Procesar la imagen
     pil_im = Image.open('model/mimodelo.h5', 'r')
     im = np.asarray(pil_im.resize((100,100)))
-    img_array = np.array(image) / 255.0  # Normalizar
-    img_array = img_array.reshape(1, 100, 100, 3)
+    im = im.reshape(1,100,100,3)
 
     # Mostrar la imagen subida
     st.image(image, caption='Imagen subida', use_column_width=True)
 
     # Predicción
-    prediction = model.predict(img_array)
+    prediction = model.predict(im)
     classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
     st.write(f"Predicción: {classes[np.argmax(prediction)]}")
